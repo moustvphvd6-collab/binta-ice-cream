@@ -1,0 +1,23 @@
+{
+  "name": "binta-ice-cream-api",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "API (Node.js + Express + MongoDB) pour le site Binta Ice Cream SUARL",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js",
+    "seed": "node seed/run.js"
+  },
+  "dependencies": {
+    "cloudinary": "^2.4.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.6.0",
+    "multer": "^2.0.0",
+    "streamifier": "^0.1.1"
+  }
+}

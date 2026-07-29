@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Binta Ice Cream SUARL — Fraîcheur, Qualité et Plaisir</title>
+<meta name="description" content="Commandez vos glaces Binta Ice Cream et faites-vous livrer partout au Sénégal. Commande simple, envoyée directement sur WhatsApp.">
+<link rel="icon" href="assets/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css?v=2">
+</head>
+<body>
+
+<!-- Bandeau annonce -->
+<div class="topbar">
+  <div class="topbar__track">
+    <div class="topbar__group">
+      <span>🛵 Nous livrons partout au Sénégal</span>
+      <span>•</span>
+      <span>📦 Commande par carton</span>
+      <span>•</span>
+      <span>💬 Commande envoyée directement sur WhatsApp</span>
+      <span>•</span>
+    </div>
+    <div class="topbar__group" aria-hidden="true">
+      <span>🛵 Nous livrons partout au Sénégal</span>
+      <span>•</span>
+      <span>📦 Commande par carton</span>
+      <span>•</span>
+      <span>💬 Commande envoyée directement sur WhatsApp</span>
+      <span>•</span>
+    </div>
+  </div>
+</div>
+
+<!-- Header -->
+<header class="header" id="header">
+  <div class="header__inner container">
+    <a href="#top" class="brand">
+      <img src="assets/logo.png" alt="Binta Ice Cream SUARL" class="brand__logo">
+    </a>
+    <nav class="nav" id="nav">
+      <button class="nav__close" id="navClose" aria-label="Fermer le menu">✕</button>
+      <p class="nav__eyebrow">Menu</p>
+      <a href="#produits">Nos parfums</a>
+      <a href="#commander">Comment commander</a>
+      <a href="#contact">Contact</a>
+      <a href="admin.html" class="nav__admin">Connexion</a>
+    </nav>
+    <div class="header__actions">
+      <button class="cart-btn" id="openCart" aria-label="Ouvrir le panier">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M3 3H5L5.4 5M5.4 5H21L18 14H7L5.4 5Z" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><circle cx="9" cy="19" r="1.6" fill="currentColor"/><circle cx="17" cy="19" r="1.6" fill="currentColor"/></svg>
+        <span class="cart-btn__count" id="cartCount">0</span>
+      </button>
+      <button class="burger" id="burger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- Hero -->
+<section class="hero" id="top">
+  <div class="hero__blob" aria-hidden="true"></div>
+  <div class="container hero__inner">
+    <div class="hero__copy">
+      <p class="eyebrow">Binta Ice Cream SUARL · Keur Massar &amp; Poste Thiaroye</p>
+      <h1 class="hero__title">La fraîcheur qui fait sourire <em>le Sénégal</em></h1>
+      <p class="hero__sub">Fraîcheur, qualité et plaisir à chaque bouchée. Choisissez vos cartons, ajoutez-les au panier, et recevez votre commande directement sur WhatsApp — sans compte, sans complication.</p>
+      <div class="hero__cta">
+        <a href="#produits" class="btn btn--primary">Voir les parfums</a>
+        <a href="#commander" class="btn btn--ghost">Comment ça marche</a>
+      </div>
+    </div>
+    <div class="hero__art" aria-hidden="true">
+      <div class="scoop scoop--pink"></div>
+      <div class="scoop scoop--vanilla"></div>
+      <div class="scoop scoop--choco"></div>
+      <div class="cone"></div>
+    </div>
+  </div>
+  <svg class="drip" viewBox="0 0 1440 90" preserveAspectRatio="none" aria-hidden="true">
+    <path d="M0,0 L1440,0 L1440,40 C1380,40 1360,85 1320,85 C1280,85 1265,45 1225,45 C1185,45 1170,80 1130,80 C1090,80 1078,50 1038,50 C998,50 985,90 945,90 C905,90 895,55 855,55 C815,55 800,75 760,75 C720,75 710,42 670,42 C630,42 618,70 578,70 C538,70 528,48 488,48 C448,48 438,82 398,82 C358,82 348,52 308,52 C268,52 255,88 215,88 C175,88 165,50 125,50 C85,50 72,78 32,78 C12,78 0,60 0,40 Z" fill="var(--cream)"/>
+  </svg>
+</section>
+
+<!-- Catalogue -->
+<section class="section" id="produits">
+  <div class="container">
+    <p class="eyebrow eyebrow--center">Notre carte</p>
+    <h2 class="section__title">12 recettes, un seul plaisir</h2>
+    <p class="section__sub">Tous nos parfums sont vendus par carton. Choisissez la quantité de cartons souhaitée pour chaque produit.</p>
+
+    <div class="filters" id="filters">
+      <button class="filter filter--active" data-filter="tous">Tous</button>
+      <button class="filter" data-filter="baton">Bâtonnets</button>
+      <button class="filter" data-filter="barre">Barres enveloppées</button>
+      <button class="filter" data-filter="pot">Pots &amp; cups</button>
+    </div>
+
+    <div class="grid" id="productGrid"></div>
+  </div>
+</section>
+
+<!-- Comment commander -->
+<section class="section section--muted" id="commander">
+  <div class="container">
+    <p class="eyebrow eyebrow--center">Simple et rapide</p>
+    <h2 class="section__title">Comment commander</h2>
+    <div class="steps">
+      <div class="step reveal">
+        <span class="step__num">01</span>
+        <h3>Choisissez vos cartons</h3>
+        <p>Parcourez la carte et ajoutez au panier les parfums qui vous font envie, carton par carton.</p>
+      </div>
+      <div class="step reveal">
+        <span class="step__num">02</span>
+        <h3>Validez votre panier</h3>
+        <p>Vérifiez votre commande, renseignez votre nom, votre téléphone et votre adresse de livraison.</p>
+      </div>
+      <div class="step reveal">
+        <span class="step__num">03</span>
+        <h3>Envoyez sur WhatsApp</h3>
+        <p>Un message récapitulatif s'ouvre automatiquement sur WhatsApp. Il ne reste qu'à l'envoyer !</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Contact -->
+<section class="section contact-section" id="contact">
+  <div class="container">
+    <div class="section__head reveal">
+      <p class="eyebrow eyebrow--center">Une question, une envie ?</p>
+      <h2 class="section__title">Écrivez-nous</h2>
+      <p class="section__sub">Envoyez-nous un message, nous vous répondons par e-mail dans les plus brefs délais.</p>
+    </div>
+
+    <!--
+      ⚠️ IMPORTANT : remplacez "votre-email@exemple.com" ci-dessous par votre vraie adresse e-mail.
+      Le formulaire utilise FormSubmit (https://formsubmit.co), un service gratuit qui transmet
+      les messages du formulaire vers votre boîte mail, sans avoir besoin d'un serveur.
+      Lors du tout premier envoi, FormSubmit vous enverra un e-mail de confirmation :
+      il faudra cliquer sur le lien qu'il contient pour activer la réception.
+    -->
+    <form id="contactForm" class="contact-card reveal" action="https://formsubmit.co/votre-email@exemple.com" method="POST">
+      <input type="hidden" name="_subject" value="Nouveau message — Site Binta Ice Cream">
+      <input type="hidden" name="_template" value="table">
+      <input type="hidden" name="_captcha" value="false">
+      <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
+
+      <div class="contact-card__row">
+        <label>
+          Nom
+          <input type="text" name="Nom" required placeholder="Votre nom">
+        </label>
+        <label>
+          Téléphone (optionnel)
+          <input type="tel" name="Téléphone" placeholder="Votre numéro">
+        </label>
+      </div>
+      <label>
+        Message
+        <textarea name="Message" rows="4" required placeholder="Votre message..."></textarea>
+      </label>
+      <button type="submit" class="btn btn--primary" id="contactSubmit">Envoyer</button>
+      <p class="modal__hint" id="contactStatus"></p>
+    </form>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="container footer__inner">
+    <div class="footer__brand">
+      <img src="assets/logo.png" alt="Binta Ice Cream SUARL" class="footer__logo">
+      <p>Fraîcheur, Qualité et Plaisir à chaque bouchée !</p>
+    </div>
+    <div class="footer__col">
+      <h4>Contact</h4>
+      <p>📍 Keur Massar &amp; Poste Thiaroye</p>
+      <p>📞 78 633 60 60</p>
+      <p>📞 77 132 47 18</p>
+      <p>✉️ Bintaicecreamsuarl@gmail.com</p>
+    </div>
+    <div class="footer__col">
+      <h4>Suivez-nous</h4>
+      <div class="socials">
+        <a href="#" aria-label="TikTok">TikTok</a>
+        <a href="https://wa.me/221771324718" target="_blank" rel="noopener" aria-label="WhatsApp">WhatsApp</a>
+        <a href="#" aria-label="Facebook">Facebook</a>
+        <a href="#" aria-label="Instagram">Instagram</a>
+      </div>
+    </div>
+    <div class="footer__col">
+      <h4>Livraison</h4>
+      <p>🛵 Nous livrons partout au Sénégal</p>
+    </div>
+  </div>
+  <div class="footer__bottom">© 2026 Binta Ice Cream SUARL — Tous droits réservés</div>
+</footer>
+
+<!-- Overlay -->
+<div class="overlay" id="overlay"></div>
+
+<!-- Panier -->
+<aside class="cart" id="cart" aria-hidden="true">
+  <div class="cart__head">
+    <h3>Votre panier</h3>
+    <button class="icon-btn" id="closeCart" aria-label="Fermer le panier">✕</button>
+  </div>
+  <div class="cart__body" id="cartBody">
+    <p class="cart__empty" id="cartEmpty">Votre panier est vide pour le moment. Ajoutez un ou plusieurs cartons depuis la carte 🍨</p>
+    <ul class="cart__list" id="cartList"></ul>
+  </div>
+  <div class="cart__foot" id="cartFoot">
+    <div class="cart__total">
+      <span>Total</span>
+      <strong id="cartTotal">0 FCFA</strong>
+    </div>
+    <button class="btn btn--primary btn--full" id="goCheckout">Commander sur WhatsApp</button>
+  </div>
+</aside>
+
+<!-- Modal Commande -->
+<div class="modal" id="checkoutModal" aria-hidden="true">
+  <div class="modal__card">
+    <div class="modal__head">
+      <h3>Finaliser la commande</h3>
+      <button class="icon-btn" id="closeModal" aria-label="Fermer">✕</button>
+    </div>
+    <form id="checkoutForm" class="modal__form">
+      <label>
+        Nom complet
+        <input type="text" name="nom" required placeholder="Votre nom et prénom">
+      </label>
+      <label>
+        Numéro de téléphone
+        <input type="tel" name="telephone" required placeholder="Ex : 77 123 45 67">
+      </label>
+      <label>
+        Ville / Quartier
+        <input type="text" name="ville" required placeholder="Ex : Keur Massar, Dakar">
+      </label>
+      <label>
+        Adresse précise
+        <input type="text" name="adresse" required placeholder="Rue, repère, etc.">
+      </label>
+      <label>
+        Note (optionnel)
+        <textarea name="note" rows="2" placeholder="Une précision pour la livraison ?"></textarea>
+      </label>
+      <button type="submit" class="btn btn--primary btn--full">Envoyer la commande sur WhatsApp</button>
+      <p class="modal__hint">Vous serez redirigé vers WhatsApp avec un message déjà préparé. Il vous suffira de l'envoyer.</p>
+    </form>
+  </div>
+</div>
+
+<script type="module" src="js/script.js?v=2"></script>
+</body>
+</html>

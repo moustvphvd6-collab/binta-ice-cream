@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Administration — Binta Ice Cream</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="icon" href="assets/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,500;0,600;0,700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css?v=2">
+<link rel="stylesheet" href="css/admin.css?v=2">
+</head>
+<body class="admin-body">
+
+<!-- Écran de connexion -->
+<div class="admin-login" id="loginScreen">
+  <div class="admin-login__card">
+    <a href="index.html" class="admin-login__back">← Retour au site</a>
+    <img src="assets/logo.png" alt="Binta Ice Cream" class="admin-login__logo">
+    <h1>Espace administrateur</h1>
+    <p>Connectez-vous pour gérer les parfums du site.</p>
+    <form id="loginForm" class="admin-login__form">
+      <label>
+        Email
+        <input type="email" name="email" required placeholder="votre@email.com">
+      </label>
+      <label>
+        Mot de passe
+        <input type="password" name="password" required placeholder="••••••••">
+      </label>
+      <button type="submit" class="btn btn--primary btn--full">Se connecter</button>
+      <p class="admin-login__error" id="loginError"></p>
+    </form>
+    <p class="admin-login__notice" id="apiNotice"></p>
+  </div>
+</div>
+
+<!-- Panneau admin (visible une fois connecté) -->
+<div class="admin-panel" id="adminPanel" hidden>
+  <header class="admin-header">
+    <div class="container admin-header__inner">
+      <a href="index.html" class="brand"><img src="assets/logo.png" alt="Binta Ice Cream" class="brand__logo brand__logo--small"></a>
+      <h1>Gestion des parfums</h1>
+      <div class="admin-header__actions">
+        <a href="index.html" class="btn btn--ghost">Voir le site</a>
+        <button class="btn btn--ghost" id="logoutBtn">Se déconnecter</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="container admin-main">
+    <div class="admin-toolbar">
+      <p class="admin-toolbar__count" id="productCount"></p>
+      <button class="btn btn--primary" id="newProductBtn">+ Ajouter un parfum</button>
+    </div>
+
+    <div class="admin-table-wrap">
+      <table class="admin-table" id="productsTable">
+        <thead>
+          <tr>
+            <th>Parfum</th>
+            <th>Catégorie</th>
+            <th>Format</th>
+            <th>Prix unité</th>
+            <th>Prix carton</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody id="productsTableBody"></tbody>
+      </table>
+    </div>
+  </main>
+</div>
+
+<!-- Overlay + formulaire produit -->
+<div class="overlay" id="overlay"></div>
+<div class="modal" id="productModal" aria-hidden="true">
+  <div class="modal__card">
+    <div class="modal__head">
+      <h3 id="productModalTitle">Ajouter un parfum</h3>
+      <button class="icon-btn" id="closeProductModal" aria-label="Fermer">✕</button>
+    </div>
+    <form id="productForm" class="modal__form">
+      <input type="hidden" name="originalId">
+      <label>
+        Nom du parfum
+        <input type="text" name="name" required placeholder="Ex : Zing-Zing">
+      </label>
+      <label>
+        Description
+        <input type="text" name="desc" required placeholder="Ex : Bâtonnet torsadé chocolat-vanille">
+      </label>
+      <label>
+        Catégorie
+        <select name="category" required>
+          <option value="baton">Bâtonnet</option>
+          <option value="barre">Barre enveloppée</option>
+          <option value="pot">Pot / Cup</option>
+        </select>
+      </label>
+      <div class="modal__row">
+        <label>
+          Pièces par carton
+          <input type="number" name="pack" min="1" required placeholder="24">
+        </label>
+        <label>
+          Prix à l'unité (FCFA)
+          <input type="number" name="unitPrice" min="0" required placeholder="300">
+        </label>
+        <label>
+          Prix du carton (FCFA)
+          <input type="number" name="boxPrice" min="0" required placeholder="7200">
+        </label>
+      </div>
+      <input type="hidden" name="swatch1">
+      <input type="hidden" name="swatch2">
+      <input type="hidden" name="currentImageUrl">
+      <label>
+        Photo du produit (optionnel) — URL ou fichier
+        <input type="text" name="imageUrl" placeholder="Ou colle une URL d'image https://...">
+      </label>
+      <label>
+        Upload image
+        <input type="file" name="image" accept="image/*">
+      </label>
+      <div class="product-image-preview" id="productImagePreview"></div>
+      <button type="submit" class="btn btn--primary btn--full">Enregistrer</button>
+      <p class="modal__hint" id="productFormError"></p>
+    </form>
+  </div>
+</div>
+
+<script type="module" src="js/admin.js?v=2"></script>
+</body>
+</html>
